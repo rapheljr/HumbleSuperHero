@@ -61,15 +61,15 @@ The Humble Superhero API is a simple Node.js-based API built using NestJS. It al
    ```
 2. Install dependencies:
    ```sh
-   npm install
+   yarn install
    ```
 3. Run the server:
    ```sh
-   npm run start
+   yarn start
    ```
 4. For development with live reload:
    ```sh
-   npm run start:dev
+   yarn dev
    ```
 
 ## Testing
@@ -77,7 +77,7 @@ The Humble Superhero API is a simple Node.js-based API built using NestJS. It al
 To run tests using Jest:
 
 ```sh
-npm run test
+yarn test
 ```
 
 ## Collaboration Notes

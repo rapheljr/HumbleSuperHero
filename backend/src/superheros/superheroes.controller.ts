@@ -1,14 +1,21 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  UsePipes,
+  ValidationPipe,
+} from '@nestjs/common';
 import { SuperheroesService } from './superheroes.service';
 import { SuperheroDto } from './superhero.dto';
-import { ValidationPipe } from './validate.pipe';
 
 @Controller('superheroes')
+@UsePipes(new ValidationPipe({ whitelist: true, transform: true }))
 export class SuperheroesController {
   constructor(private readonly superheroesService: SuperheroesService) {}
 
   @Post()
-  addSuperhero(@Body(new ValidationPipe()) superheroDto: SuperheroDto) {
+  addSuperhero(@Body() superheroDto: SuperheroDto) {
     this.superheroesService.addSuperhero(
       superheroDto.name,
       superheroDto.superpower,
